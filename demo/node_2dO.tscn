@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://bx31a2a4skhtf"]
+
+[ext_resource type="Texture2D" uid="uid://hlith6xb1thm" path="res://frame_0_delay-0.1s.png" id="1_ykbro"]
+[ext_resource type="Texture2D" uid="uid://bkcg34uto157s" path="res://frame_1_delay-0.1s.png" id="2_aw12u"]
+[ext_resource type="Texture2D" uid="uid://uysob1jg7mmf" path="res://frame_2_delay-0.1s.png" id="3_5mkmm"]
+[ext_resource type="Texture2D" uid="uid://clk8fdgqftlp7" path="res://frame_3_delay-0.1s.png" id="4_88pcu"]
+[ext_resource type="Texture2D" uid="uid://du4telchsjcyc" path="res://frame_4_delay-0.1s.png" id="5_ieu6s"]
+[ext_resource type="Texture2D" uid="uid://dqnorkqey1qay" path="res://frame_5_delay-0.1s.png" id="6_q1fgs"]
+[ext_resource type="Texture2D" uid="uid://ls68bxdhntmv" path="res://frame_6_delay-0.1s.png" id="7_ulkhy"]
+[ext_resource type="Texture2D" uid="uid://b86k4bsy07mj3" path="res://frame_7_delay-0.1s.png" id="8_kv8hw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtn0n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ykbro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aw12u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mkmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88pcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ieu6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q1fgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ulkhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kv8hw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ak4cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ykbro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aw12u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mkmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88pcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ieu6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q1fgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ulkhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kv8hw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tspeed" type="Tspeed" parent="."]
+offset_left = 704.0
+offset_top = 268.0
+offset_right = 958.0
+offset_bottom = 394.0
+text = "Tspeed"
+
+[node name="Fspeed" type="Fspeed" parent="."]
+offset_left = 709.0
+offset_top = 109.0
+offset_right = 954.0
+offset_bottom = 225.0
+text = "Fspeed"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(270.25, 269.679)
+scale = Vector2(4.7381, 4.73809)
+sprite_frames = SubResource("SpriteFrames_mtn0n")
+animation = &"run"
+frame = 4
+frame_progress = 0.0773693
+
+[node name="Speedch2" type="Speedch" parent="."]
+position = Vector2(452, 359)
+scale = Vector2(4.7381, 4.73809)
+sprite_frames = SubResource("SpriteFrames_ak4cd")
+speed_scale = 0.0

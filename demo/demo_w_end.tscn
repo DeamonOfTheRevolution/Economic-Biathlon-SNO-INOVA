@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1a3s8cdm8ne7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 249.0
+offset_right = 240.0
+offset_bottom = 272.0
+scale = Vector2(6, 6)
+text = "Худший конец демки"

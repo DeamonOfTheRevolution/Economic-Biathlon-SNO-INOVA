@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd30ccg8i50l3"]
+
+[ext_resource type="PackedScene" uid="uid://qcs5j4w0s21o" path="res://scene.tscn" id="1_tbsap"]
+[ext_resource type="Texture2D" uid="uid://c6ih0x6h0cv7q" path="res://pictures/gora.jpg" id="2_m4x5p"]
+[ext_resource type="Script" path="res://TileMap.gd" id="4_5wib1"]
+[ext_resource type="PackedScene" uid="uid://cu7kj2k3r56u7" path="res://test_no.tscn" id="4_ghjh0"]
+
+[sub_resource type="TileSet" id="TileSet_h68my"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_tbsap")]
+position = Vector2(32, 346)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1401.0
+offset_top = 277.0
+offset_right = 1618.0
+offset_bottom = 300.0
+scale = Vector2(5, 5)
+text = "Нормальный конец демки"
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxLayer"]
+
+[node name="Gora" type="Sprite2D" parent="ParallaxLayer/ParallaxBackground"]
+position = Vector2(577.286, 324.25)
+scale = Vector2(0.898884, 0.902083)
+texture = ExtResource("2_m4x5p")
+
+[node name="TileMap4" type="TileMap" parent="."]
+position = Vector2(-1000.23, 0)
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_h68my")
+format = 2
+script = ExtResource("4_5wib1")
+
+[node name="Timer" type="Timer" parent="TileMap4"]
+wait_time = 1.2
+autostart = true
+
+[node name="Node2D2" parent="." instance=ExtResource("4_ghjh0")]
+
+[connection signal="timeout" from="TileMap4/Timer" to="TileMap4" method="_on_timer_timeout"]

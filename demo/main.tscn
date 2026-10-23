@@ -1,0 +1,192 @@
+[gd_scene load_steps=15 format=3 uid="uid://cr6o867wlivb"]
+
+[ext_resource type="Texture2D" uid="uid://bhbnlsfvm0jqr" path="res://plx-1.png" id="1_opvua"]
+[ext_resource type="Script" path="res://main.gd" id="1_p5r7b"]
+[ext_resource type="Texture2D" uid="uid://38o3g7oot0g2" path="res://plx-2.png" id="2_wns47"]
+[ext_resource type="Texture2D" uid="uid://daihg77vwlynj" path="res://plx-3.png" id="3_yqohb"]
+[ext_resource type="Texture2D" uid="uid://caj0hrep3nqca" path="res://plx-4.png" id="4_mmvdb"]
+[ext_resource type="Texture2D" uid="uid://exlf171tuuyi" path="res://player1.png" id="8_4vaim"]
+[ext_resource type="Texture2D" uid="uid://coln3lrk8evpf" path="res://player2.png" id="9_4sxab"]
+[ext_resource type="Texture2D" uid="uid://br8kahkhybnc7" path="res://player3.png" id="10_0twip"]
+[ext_resource type="Texture2D" uid="uid://ca5gpcrhmb6um" path="res://pictures/all_trees2.png" id="10_4s1pd"]
+[ext_resource type="Script" path="res://TileMap.gd" id="10_watw7"]
+[ext_resource type="Texture2D" uid="uid://cy7vfld18x50i" path="res://plx-5.png" id="11_jqudh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3m47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4vaim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4sxab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0twip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4sxab")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_monsl"]
+texture = ExtResource("10_4s1pd")
+texture_region_size = Vector2i(550, 950)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ybwrq"]
+sources/1 = SubResource("TileSetAtlasSource_monsl")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_p5r7b")
+
+[node name="ParallaxBG5" type="ParallaxBG" parent="."]
+speedn = 10.0
+offset = Vector2(-8.81119, 0)
+transform = Transform2D(1, 0, 0, 1, -8.81119, 0)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBG5"]
+motion_mirroring = Vector2(1141, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBG5/ParallaxLayer5"]
+position = Vector2(576.013, 323.5)
+scale = Vector2(2.99993, 3.00463)
+texture = ExtResource("1_opvua")
+
+[node name="ParallaxBG4" type="ParallaxBG" parent="."]
+speedn = 25.0
+offset = Vector2(-22.028, 0)
+transform = Transform2D(1, 0, 0, 1, -22.028, 0)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBG4"]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBG4/ParallaxLayer4"]
+position = Vector2(576, 323.75)
+scale = Vector2(3, 3.00231)
+texture = ExtResource("2_wns47")
+
+[node name="ParallaxBG3" type="ParallaxBG" parent="."]
+speedn = 40.0
+offset = Vector2(-35.2448, 0)
+transform = Transform2D(1, 0, 0, 1, -35.2448, 0)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBG3"]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBG3/ParallaxLayer3"]
+position = Vector2(576.189, 325.125)
+scale = Vector2(2.99913, 3.01042)
+texture = ExtResource("3_yqohb")
+
+[node name="ParallaxBG2" type="ParallaxBG" parent="."]
+speedn = 55.0
+offset = Vector2(-48.4615, 0)
+transform = Transform2D(1, 0, 0, 1, -48.4615, 0)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBG2"]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBG2/ParallaxLayer2"]
+position = Vector2(585.781, 324)
+scale = Vector2(2.99872, 3)
+texture = ExtResource("4_mmvdb")
+
+[node name="Speedch" type="Speedch" parent="."]
+position = Vector2(100, 450)
+scale = Vector2(3.8125, 3.8125)
+sprite_frames = SubResource("SpriteFrames_r3m47")
+animation = &"run"
+autoplay = "run"
+speed_scale = 0.05
+
+[node name="ParallaxL" type="ParallaxL" parent="."]
+speed = 100.0
+position = Vector2(-88.1119, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxL"]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxL/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("11_jqudh")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxL/ParallaxLayer/Sprite2D"]
+position = Vector2(384.107, 0.333341)
+scale = Vector2(1.00056, 1.00309)
+texture = ExtResource("11_jqudh")
+
+[node name="ParallaxL2" type="ParallaxL" parent="."]
+speed = 100.0
+teleport = false
+position = Vector2(-88.1119, 0)
+
+[node name="TileMap" type="TileMap" parent="ParallaxL2"]
+position = Vector2(-1000.23, 0)
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_ybwrq")
+format = 2
+script = ExtResource("10_watw7")
+
+[node name="Timer" type="Timer" parent="ParallaxL2/TileMap"]
+wait_time = 1.2
+autostart = true
+
+[node name="GTimerRevers" type="GTimerRevers" parent="."]
+offset_left = 930.0
+offset_top = 8.0
+offset_right = 995.0
+offset_bottom = 31.0
+scale = Vector2(3, 3)
+
+[node name="GPoint" type="GPoint" parent="."]
+offset_left = 700.0
+offset_top = 10.0
+offset_right = 767.0
+offset_bottom = 33.0
+scale = Vector2(3, 3)
+
+[node name="Tspeed" type="Tspeed" parent="."]
+offset_left = 200.0
+offset_top = 180.0
+offset_right = 400.0
+offset_bottom = 280.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Fspeed" type="Fspeed" parent="."]
+top_level = true
+offset_left = 200.0
+offset_top = 315.0
+offset_right = 400.0
+offset_bottom = 415.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest_Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Wait_Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="TimeRemaining" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 285.0
+offset_right = 240.0
+offset_bottom = 308.0
+
+[connection signal="timeout" from="ParallaxL2/TileMap/Timer" to="ParallaxL2/TileMap" method="_on_timer_timeout"]
+[connection signal="pressed" from="Tspeed" to="." method="_on_tspeed_pressed"]
+[connection signal="pressed" from="Fspeed" to="." method="_on_fspeed_pressed"]
+[connection signal="timeout" from="Quest_Timer" to="." method="_on_quest_timer_timeout"]
+[connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timer_timeout"]

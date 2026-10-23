@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhu3ec2b5yxfi"]
+
+[ext_resource type="Texture2D" uid="uid://cyqxa7pgu37oy" path="res://pictures/blur-sky.jpg" id="1_q42on"]
+[ext_resource type="Texture2D" uid="uid://dhpkna3m5vbb6" path="res://pictures/kovrik_biatlonista.png" id="2_e1ajr"]
+[ext_resource type="Texture2D" uid="uid://5b7yxnfsmdrv" path="res://pictures/trassa.png" id="3_0b8v3"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Blur-sky" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(577, 312)
+scale = Vector2(0.248264, 0.185185)
+texture = ExtResource("1_q42on")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="KovrikBiatlonista" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(303, 422)
+scale = Vector2(0.317751, 0.129731)
+texture = ExtResource("2_e1ajr")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="Trassa" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(581.25, 552)
+scale = Vector2(0.682295, 0.430493)
+texture = ExtResource("3_0b8v3")

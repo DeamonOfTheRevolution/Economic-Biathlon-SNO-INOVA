@@ -1,0 +1,486 @@
+[gd_scene load_steps=11 format=3 uid="uid://cu7kj2k3r56u7"]
+
+[ext_resource type="Texture2D" uid="uid://crv6e4i8pnj5u" path="res://a_test_b/a_test_b.png" id="1_1w5yg"]
+[ext_resource type="Script" path="res://test_no.gd" id="1_4ip8w"]
+[ext_resource type="Texture2D" uid="uid://cp22gr3kdc3gk" path="res://a_test_b/a_test_b1.png" id="2_2hkfu"]
+[ext_resource type="Texture2D" uid="uid://bdesfu4vj58xk" path="res://a_test_b/a_test_b2.png" id="3_fopug"]
+[ext_resource type="Texture2D" uid="uid://dw54ss02yo1fv" path="res://a_test_b/a_test_b3.png" id="4_giqqx"]
+[ext_resource type="Texture2D" uid="uid://dvmimnemgwgc2" path="res://a_test_b/a_test_b4.png" id="5_eex8g"]
+[ext_resource type="Texture2D" uid="uid://dl8s2o1kgcfvf" path="res://Sprite-0007.png" id="7_0qaph"]
+[ext_resource type="Texture2D" uid="uid://oj87iqila7aq" path="res://прямо.png" id="7_h2h0p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dqa4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1w5yg")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hkfu")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fopug")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_giqqx")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eex8g")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="ImageTexture" id="ImageTexture_v1dhc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4ip8w")
+
+[node name="GTimerRevers" type="GTimerRevers" parent="."]
+offset_left = 29.0
+offset_top = 9.0
+offset_right = 93.0
+offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GPoint" type="GPoint" parent="."]
+offset_left = 173.0
+offset_top = 9.0
+offset_right = 258.0
+offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite" type="AnswerButtonSprite" parent="."]
+x = 250
+y = 250
+Speed = 0.5
+Step = 200.0
+position = Vector2(250, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer1" type="GPointButtonAnswer" parent="AnswerButtonSprite"]
+var = 1
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer2" type="GPointButtonAnswer" parent="AnswerButtonSprite"]
+var = 2
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer3" type="GPointButtonAnswer" parent="AnswerButtonSprite"]
+var = 3
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer4" type="GPointButtonAnswer" parent="AnswerButtonSprite"]
+var = 4
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite2" type="AnswerButtonSprite" parent="."]
+x = 450
+y = 250
+Iter = 1
+Speed = 0.5
+Step = 200.0
+position = Vector2(450, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer11" type="GPointButtonAnswer" parent="AnswerButtonSprite2"]
+var = 1
+Iter = 1
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer21" type="GPointButtonAnswer" parent="AnswerButtonSprite2"]
+var = 2
+Iter = 1
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer31" type="GPointButtonAnswer" parent="AnswerButtonSprite2"]
+var = 3
+Iter = 1
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer41" type="GPointButtonAnswer" parent="AnswerButtonSprite2"]
+var = 4
+Iter = 1
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite3" type="AnswerButtonSprite" parent="."]
+x = 650
+y = 250
+Iter = 2
+Speed = 0.5
+Step = 200.0
+position = Vector2(650, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer12" type="GPointButtonAnswer" parent="AnswerButtonSprite3"]
+var = 1
+Iter = 2
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer22" type="GPointButtonAnswer" parent="AnswerButtonSprite3"]
+var = 2
+Iter = 2
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer32" type="GPointButtonAnswer" parent="AnswerButtonSprite3"]
+var = 3
+Iter = 2
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer42" type="GPointButtonAnswer" parent="AnswerButtonSprite3"]
+var = 4
+Iter = 2
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite4" type="AnswerButtonSprite" parent="."]
+x = 850
+y = 250
+Iter = 3
+Speed = 0.5
+Step = 200.0
+position = Vector2(850, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer13" type="GPointButtonAnswer" parent="AnswerButtonSprite4"]
+var = 1
+Iter = 3
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer23" type="GPointButtonAnswer" parent="AnswerButtonSprite4"]
+var = 2
+Iter = 3
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer33" type="GPointButtonAnswer" parent="AnswerButtonSprite4"]
+var = 3
+Iter = 3
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer43" type="GPointButtonAnswer" parent="AnswerButtonSprite4"]
+var = 4
+Iter = 3
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite5" type="AnswerButtonSprite" parent="."]
+x = 1050
+y = 250
+Iter = 4
+Speed = 0.5
+Step = 200.0
+position = Vector2(1050, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer14" type="GPointButtonAnswer" parent="AnswerButtonSprite5"]
+var = 1
+Iter = 4
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer24" type="GPointButtonAnswer" parent="AnswerButtonSprite5"]
+var = 2
+Iter = 4
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer34" type="GPointButtonAnswer" parent="AnswerButtonSprite5"]
+var = 3
+Iter = 4
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer44" type="GPointButtonAnswer" parent="AnswerButtonSprite5"]
+var = 4
+Iter = 4
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnswerButtonSprite6" type="AnswerButtonSprite" parent="."]
+x = 1250
+y = 250
+Iter = 5
+Speed = 0.5
+Step = 200.0
+position = Vector2(1250, 250)
+sprite_frames = SubResource("SpriteFrames_1dqa4")
+animation = &"0"
+
+[node name="GPointButtonAnswer15" type="GPointButtonAnswer" parent="AnswerButtonSprite6"]
+var = 1
+Iter = 5
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.0546875
+anchor_top = -0.046875
+anchor_right = 0.0546875
+anchor_bottom = 0.0078125
+offset_left = -57.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -1.0
+scale = Vector2(1.004, 1)
+text = "1"
+icon = SubResource("ImageTexture_v1dhc")
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer25" type="GPointButtonAnswer" parent="AnswerButtonSprite6"]
+var = 2
+Iter = 5
+modulate = Color(1, 1, 1, 0.443137)
+anchors_preset = -1
+anchor_left = -0.03125
+anchor_bottom = 0.03125
+offset_left = 4.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -4.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer35" type="GPointButtonAnswer" parent="AnswerButtonSprite6"]
+var = 3
+Iter = 5
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = -64.0
+offset_bottom = 64.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="GPointButtonAnswer45" type="GPointButtonAnswer" parent="AnswerButtonSprite6"]
+var = 4
+Iter = 5
+modulate = Color(1, 1, 1, 0.443137)
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="Прямо" type="Sprite2D" parent="."]
+position = Vector2(779, 553)
+texture = ExtResource("7_h2h0p")
+
+[node name="Sprite-0007" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-118, 0)
+texture = ExtResource("7_0qaph")
+
+[node name="Sprite-0008" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-71, 0)
+texture = ExtResource("7_0qaph")
+
+[node name="Sprite-0009" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-24, 0)
+texture = ExtResource("7_0qaph")
+
+[node name="Sprite-0010" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(23, 0)
+texture = ExtResource("7_0qaph")
+
+[node name="Sprite-0011" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(70, 0)
+texture = ExtResource("7_0qaph")
+
+[node name="Sprite-0012" type="Sprite2D" parent="Прямо"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(117, 0)
+texture = ExtResource("7_0qaph")
+
+[connection signal="pressed" from="AnswerButtonSprite/GPointButtonAnswer1" to="." method="_on_g_point_button_answer_1_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite/GPointButtonAnswer2" to="." method="_on_g_point_button_answer_2_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite/GPointButtonAnswer3" to="." method="_on_g_point_button_answer_3_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite/GPointButtonAnswer4" to="." method="_on_g_point_button_answer_4_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite2/GPointButtonAnswer11" to="." method="_on_g_point_button_answer_11_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite2/GPointButtonAnswer21" to="." method="_on_g_point_button_answer_21_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite2/GPointButtonAnswer31" to="." method="_on_g_point_button_answer_31_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite2/GPointButtonAnswer41" to="." method="_on_g_point_button_answer_41_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite3/GPointButtonAnswer12" to="." method="_on_g_point_button_answer_12_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite3/GPointButtonAnswer22" to="." method="_on_g_point_button_answer_22_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite3/GPointButtonAnswer32" to="." method="_on_g_point_button_answer_32_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite3/GPointButtonAnswer42" to="." method="_on_g_point_button_answer_42_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite4/GPointButtonAnswer13" to="." method="_on_g_point_button_answer_13_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite4/GPointButtonAnswer23" to="." method="_on_g_point_button_answer_23_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite4/GPointButtonAnswer33" to="." method="_on_g_point_button_answer_33_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite4/GPointButtonAnswer43" to="." method="_on_g_point_button_answer_43_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite5/GPointButtonAnswer14" to="." method="_on_g_point_button_answer_14_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite5/GPointButtonAnswer24" to="." method="_on_g_point_button_answer_24_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite5/GPointButtonAnswer34" to="." method="_on_g_point_button_answer_34_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite5/GPointButtonAnswer44" to="." method="_on_g_point_button_answer_44_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite6/GPointButtonAnswer15" to="." method="_on_g_point_button_answer_15_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite6/GPointButtonAnswer25" to="." method="_on_g_point_button_answer_25_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite6/GPointButtonAnswer35" to="." method="_on_g_point_button_answer_35_pressed"]
+[connection signal="pressed" from="AnswerButtonSprite6/GPointButtonAnswer45" to="." method="_on_g_point_button_answer_45_pressed"]

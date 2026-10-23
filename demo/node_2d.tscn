@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5tmdbgf7jotr"]
+
+[ext_resource type="PackedScene" uid="uid://c6lvlsjh7o7it" path="res://character_body_2d.tscn" id="3_8gyst"]
+[ext_resource type="PackedScene" uid="uid://dhu3ec2b5yxfi" path="res://parallax_background.tscn" id="4_p1tpd"]
+[ext_resource type="Texture2D" uid="uid://ca5gpcrhmb6um" path="res://pictures/all_trees2.png" id="6_y1c5i"]
+[ext_resource type="Script" path="res://TileMap.gd" id="7_y152n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lary"]
+texture = ExtResource("6_y1c5i")
+0:0/size_in_atlas = Vector2i(35, 60)
+0:0/0 = 0
+35:0/size_in_atlas = Vector2i(37, 61)
+35:0/0 = 0
+72:0/size_in_atlas = Vector2i(31, 61)
+72:0/0 = 0
+0:60/size_in_atlas = Vector2i(35, 60)
+0:60/0 = 0
+35:61/size_in_atlas = Vector2i(37, 59)
+35:61/0 = 0
+72:61/size_in_atlas = Vector2i(31, 59)
+72:61/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mpxkh"]
+sources/0 = SubResource("TileSetAtlasSource_4lary")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_8gyst")]
+
+[node name="TileMap3" type="TileMap" parent="."]
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_mpxkh")
+format = 2
+script = ExtResource("7_y152n")
+
+[node name="Timer" type="Timer" parent="TileMap3"]
+wait_time = 2.0
+autostart = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_p1tpd")]
+
+[connection signal="timeout" from="TileMap3/Timer" to="TileMap3" method="_on_timer_timeout"]

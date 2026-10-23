@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmbbda2qt7yvy"]
+
+[ext_resource type="Texture2D" uid="uid://exlf171tuuyi" path="res://player1.png" id="1_7ee7d"]
+[ext_resource type="Texture2D" uid="uid://coln3lrk8evpf" path="res://player2.png" id="2_ydsth"]
+[ext_resource type="Texture2D" uid="uid://br8kahkhybnc7" path="res://player3.png" id="3_l08ro"]
+[ext_resource type="Texture2D" uid="uid://cy7vfld18x50i" path="res://plx-5.png" id="4_3jsg7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2uufm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7ee7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ydsth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l08ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ydsth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxL" type="ParallaxL" parent="."]
+speedn = 100.0
+position = Vector2(-106.071, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxL"]
+position = Vector2(1138.49, 324)
+scale = Vector2(3.004, 3.006)
+texture = ExtResource("4_3jsg7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxL/Sprite2D"]
+position = Vector2(383.489, 2.86102e-06)
+texture = ExtResource("4_3jsg7")
+
+[node name="Speedch" type="Speedch" parent="."]
+position = Vector2(492, 69)
+sprite_frames = SubResource("SpriteFrames_2uufm")
+speed_scale = 0.0

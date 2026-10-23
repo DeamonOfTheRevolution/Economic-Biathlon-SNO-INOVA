@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5tmdbgf7jotr"]
+
+[ext_resource type="Texture2D" uid="uid://c6ih0x6h0cv7q" path="res://pictures/gora.jpg" id="3_m03qv"]
+[ext_resource type="PackedScene" path="res://buttons.tscn" id="5_61mv1"]
+[ext_resource type="Texture2D" uid="uid://bo5xhgscympvx" path="res://pictures/zemla.png" id="5_h7yvs"]
+[ext_resource type="Texture2D" uid="uid://ca5gpcrhmb6um" path="res://pictures/all_trees2.png" id="6_y1c5i"]
+[ext_resource type="Texture2D" uid="uid://dyk3eekv8jm2l" path="res://pictures/doroga.png" id="6_yma3p"]
+[ext_resource type="Script" path="res://TileMap.gd" id="7_y152n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lary"]
+texture = ExtResource("6_y1c5i")
+0:0/size_in_atlas = Vector2i(35, 60)
+0:0/0 = 0
+35:0/size_in_atlas = Vector2i(37, 61)
+35:0/0 = 0
+72:0/size_in_atlas = Vector2i(31, 61)
+72:0/0 = 0
+0:60/size_in_atlas = Vector2i(35, 60)
+0:60/0 = 0
+35:61/size_in_atlas = Vector2i(37, 59)
+35:61/0 = 0
+72:61/size_in_atlas = Vector2i(31, 59)
+72:61/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mpxkh"]
+sources/0 = SubResource("TileSetAtlasSource_4lary")
+
+[sub_resource type="GDScript" id="GDScript_qh5o6"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_el8ja"]
+a = Vector2(18, -26)
+b = Vector2(-27, 68)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxLayer"]
+layer = 1
+
+[node name="TileMap3" type="TileMap" parent="ParallaxLayer/ParallaxBackground"]
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_mpxkh")
+format = 2
+script = ExtResource("7_y152n")
+
+[node name="Timer" type="Timer" parent="ParallaxLayer/ParallaxBackground/TileMap3"]
+autostart = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="Gora" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(575.5, 206.5)
+scale = Vector2(0.894532, 0.584722)
+texture = ExtResource("3_m03qv")
+
+[node name="Zemla" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(578, 532)
+scale = Vector2(2.94629, 3.15385)
+texture = ExtResource("5_h7yvs")
+
+[node name="Control" parent="." instance=ExtResource("5_61mv1")]
+position = Vector2(124.5, 103.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 517.125)
+scale = Vector2(2.88, 2.9529)
+texture = ExtResource("6_yma3p")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+script = SubResource("GDScript_qh5o6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(297.826, 386.239)
+shape = SubResource("SegmentShape2D_el8ja")
+
+[connection signal="timeout" from="ParallaxLayer/ParallaxBackground/TileMap3/Timer" to="ParallaxLayer/ParallaxBackground/TileMap3" method="_on_timer_timeout"]
